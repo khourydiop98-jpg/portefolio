@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khoury DIOP | Référente Digitale & Stratège Web</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins (Titres) & Inter (Texte) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+        
+</head>
+<body class="antialiased">
+
+    <!-- Orbes de fond pour la profondeur -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Curseur interactif -->
+    <div class="custom-cursor" id="cursor"></div>
+
+    <!-- Navigation (Effet Glassmorphism) -->
+    <nav class="fixed w-full top-0 z-50 bg-white/70 backdrop-blur-lg border-b border-white/50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-poppins font-bold tracking-tight hover-target text-glow">
+                KHOURY<span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">.</span>
+            </a>
+
+            <!-- Menu Déroulant -->
+            <div class="group relative">
+                <button class="flex items-center gap-2 font-poppins font-medium text-sm uppercase tracking-widest hover-target bg-white/50 px-4 py-2 rounded-full border border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-all">
+                    Menu <i class="fa-solid fa-chevron-down text-xs transition-transform group-hover:rotate-180"></i>
+                </button>
+                
+                <div class="dropdown-menu absolute top-full right-0 mt-3 w-56 border border-white/50 shadow-2xl rounded-2xl overflow-hidden py-2">
+                    <a href="#about" class="dropdown-item block px-6 py-3 text-sm font-medium hover-target"><i class="fa-regular fa-user mr-2 w-4 text-blue-500"></i> À propos</a>
+                    <a href="#services" class="dropdown-item block px-6 py-3 text-sm font-medium hover-target"><i class="fa-solid fa-layer-group mr-2 w-4 text-purple-500"></i> Services</a>
+                    <a href="#skills" class="dropdown-item block px-6 py-3 text-sm font-medium hover-target"><i class="fa-solid fa-code mr-2 w-4 text-pink-500"></i> Compétences</a>
+                    <a href="#projects" class="dropdown-item block px-6 py-3 text-sm font-medium hover-target"><i class="fa-regular fa-folder-open mr-2 w-4 text-blue-500"></i> Projets</a>
+                    <div class="border-t border-gray-100 my-1"></div>
+                    <a href="#contact" class="dropdown-item block px-6 py-3 text-sm font-medium hover-target text-purple-600"><i class="fa-regular fa-paper-plane mr-2 w-4"></i> Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER / HERO SECTION -->
+    <header class="min-h-screen flex items-center justify-center pt-24 px-6 relative">
+        <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="reveal z-10">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white/60 border border-purple-100 shadow-sm backdrop-blur-sm mb-6">
+                    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Portfolio </p>
+                </div>
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-poppins font-extrabold leading-[1.1] mb-6 hover-target text-glow">
+                    Khoury
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-500 to-pink-500">DIOP</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl font-light mb-8 max-w-lg text-gray-700">
+                    Référente Digitale & <span class="font-semibold text-gray-900">Stratège Web</span>.
+                </h2>
+                
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-8">
+                    <a href="#contact" class="btn-gradient hover-target">
+                        Démarrer un projet <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                    
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/feed/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-gray-700 hover:text-blue-600 hover:shadow-lg hover:-translate-y-1 transition-all hover-target border border-gray-100"><i class="fa-brands fa-linkedin-in text-xl"></i></a>
+                        <a href="https://www.instagram.com/dija_diop_dembaba/" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full bg-white shadow-md text-gray-700 hover:text-purple-600 hover:shadow-lg hover:-translate-y-1 transition-all hover-target border border-gray-100"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Emplacement Photo avec Animation Flottaison -->
+            <div class="reveal delay-200 flex justify-center lg:justify-end relative">
+                <!-- Décoration derrière la photo -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-blue-400 to-purple-400 rounded-[2.5rem] transform rotate-3 scale-105 opacity-20 blur-lg"></div>
+                
+                <div class="w-full max-w-md aspect-[4/5] rounded-[2.5rem] overflow-hidden glass-card float-anim relative group hover-card z-10 border-2 border-white/60">
+                    
+                    <!-- L'IMAGE EST ICI -->
+                    <!-- Pour changer la photo, modifiez simplement le lien src="" ci-dessous -->
+                    <!-- Les classes w-full h-full object-cover sont OBLIGATOIRES pour éviter de casser la page -->
+                    <img src="photo de profil.png">
+                    
+                    <!-- Overlay dégradé léger pour l'esthétique -->
+                    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/40 z-10 pointer-events-none"></div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- SECTION À PROPOS -->
+    <section id="about" class="py-24 px-6 relative z-10">
+        <div class="max-w-5xl mx-auto glass-card rounded-3xl p-8 md:p-16 reveal relative overflow-hidden">
+            <!-- Élément décoratif -->
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-400/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+            
+            <div class="flex items-center gap-4 mb-10">
+                <span class="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+                <h2 class="text-2xl font-poppins font-bold uppercase tracking-widest hover-target text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">À Propos</h2>
+            </div>
+            
+            <p class="text-2xl md:text-3xl leading-relaxed font-light text-gray-800">
+                En tant que <span class="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">Référente Digitale et Stratège Web</span>, ma mission est de transformer vos défis technologiques en opportunités de croissance.
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed font-light mt-8 text-gray-600 border-l-4 border-purple-300 pl-6">
+                Mon approche combine une vision globale, une expertise technique et une veille constante sur les nouvelles technologies (notamment l'IA), afin de concevoir des solutions performantes, pérennes et parfaitement alignées avec vos objectifs d'affaires.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section id="services" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-center gap-4 mb-16 reveal text-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+                <h2 class="text-3xl md:text-4xl font-poppins font-bold hover-target">Services & <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-pink-500">Expertises</span></h2>
+                <span class="w-8 h-1 bg-gradient-to-l from-blue-500 to-purple-500 rounded-full"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="p-8 rounded-[2rem] glass-card hover-card hover-target reveal delay-100 group">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-blue-600 group-hover:text-white transition-all shadow-sm">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-gray-900">Développement Web</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Création de sites vitrines et e-commerce performants, optimisés pour l'expérience utilisateur et le référencement.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="p-8 rounded-[2rem] glass-card hover-card hover-target reveal delay-200 group">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-gray-900">IA & Innovation</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Intégration de l'intelligence artificielle pour automatiser vos processus et créer des solutions technologiques avant-gardistes.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="p-8 rounded-[2rem] glass-card hover-card hover-target reveal delay-300 group">
+                    <div class="w-16 h-16 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-pink-600 group-hover:text-white transition-all shadow-sm">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-gray-900">Transformation Digitale</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Accompagnement stratégique pour moderniser vos outils, former vos équipes et digitaliser votre activité de A à Z.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="p-8 rounded-[2rem] glass-card hover-card hover-target reveal delay-400 group">
+                    <div class="w-16 h-16 rounded-2xl bg-indigo-100 text-indigo-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white transition-all shadow-sm">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-gray-900">Gestion de Projet</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Coordination d'équipes techniques et créatives, suivi rigoureux des plannings (Agile/Scrum) et respect des budgets.</p>
+                </div>
+                <!-- Service 5 -->
+                <div class="p-8 rounded-[2rem] glass-card hover-card hover-target reveal delay-500 group md:col-span-2 lg:col-span-1">
+                    <div class="w-16 h-16 rounded-2xl bg-cyan-100 text-cyan-600 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 group-hover:bg-cyan-600 group-hover:text-white transition-all shadow-sm">
+                        <i class="fa-solid fa-hashtag"></i>
+                    </div>
+                    <h3 class="text-xl font-poppins font-bold mb-4 text-gray-900">Community Management</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Stratégie de contenu, animation de communautés et gestion de l'e-réputation sur les réseaux sociaux.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION COMPÉTENCES -->
+    <section id="skills" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center justify-center gap-4 mb-16 reveal text-center">
+                <span class="w-8 h-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></span>
+                <h2 class="text-3xl md:text-4xl font-poppins font-bold hover-target">Mes <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">Compétences</span></h2>
+                <span class="w-8 h-1 bg-gradient-to-l from-pink-500 to-purple-500 rounded-full"></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Hard Skills Web -->
+                <div class="glass-card p-8 rounded-[2.5rem] hover-card hover-target reveal delay-100">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3 class="text-xl font-poppins font-bold text-gray-900">Écosystème Web</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-blue-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-300 transition-all cursor-default group">
+                            <i class="fa-brands fa-wordpress text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">CMS & E-commerce</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-blue-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-code-branch text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Outils No-Code (Make, Zapier)</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-blue-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-server text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Architecture Web</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-blue-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-blue-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-code text-blue-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Bases HTML / CSS</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stratégie & IA -->
+                <div class="glass-card p-8 rounded-[2.5rem] hover-card hover-target reveal delay-200">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-chess-knight"></i></div>
+                        <h3 class="text-xl font-poppins font-bold text-gray-900">Stratégie & Marketing</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-purple-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-purple-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-lightbulb text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Stratégie Digitale</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-purple-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-purple-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-bullhorn text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Marketing Digital</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-purple-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-purple-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-robot text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Intégration & Solutions IA</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-purple-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-purple-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-magnifying-glass-chart text-purple-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">SEO & Data Analytics</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="glass-card p-8 rounded-[2.5rem] hover-card hover-target reveal delay-300">
+                    <div class="flex items-center gap-4 mb-8">
+                        <div class="w-14 h-14 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center text-2xl shadow-sm"><i class="fa-solid fa-list-check"></i></div>
+                        <h3 class="text-xl font-poppins font-bold text-gray-900">Pilotage & Management</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-pink-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-pink-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-flag-checkered text-pink-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Pilotage de Projet</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-pink-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-pink-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-rotate text-pink-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Méthodologies Agiles</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-pink-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-pink-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-people-group text-pink-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Coordination d'Équipe</span>
+                        </div>
+                        <div class="flex items-center gap-2 px-4 py-2.5 bg-white/80 border border-pink-100 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-pink-300 transition-all cursor-default group">
+                            <i class="fa-solid fa-arrows-turn-to-dots text-pink-500 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-gray-800 font-semibold text-sm">Conduite du Changement</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PROJETS -->
+    <section id="projects" class="py-24 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center gap-4 mb-16 reveal">
+                <span class="w-12 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></span>
+                <h2 class="text-3xl md:text-4xl font-poppins font-bold hover-target">Projets <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Sélectionnés</span></h2>
+            </div>
+
+            <div class="space-y-20">
+                <!-- Projet 1 -->
+                <div class="group grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal glass-card p-6 md:p-8 rounded-[2.5rem] hover-card">
+                    <div class="lg:col-span-7 aspect-[16/9] bg-white rounded-[1.5rem] overflow-hidden hover-target relative border border-gray-100 shadow-inner">
+                        <!-- Overlay au survol -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 bg-gray-50 m-2 rounded-[1.2rem]">
+                            <img src="Mon logo Ligeer Leather le bon 1.png" alt=""><i class="fa-regular fa-image text-4xl mb-3 text-blue-300"></i><span class="text-sm font-poppins font-semibold">Image Projet 1</span>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 lg:pl-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-600 text-xs font-bold mb-4">Stratégie & IA</div>
+                        <h3 class="text-3xl font-poppins font-bold mb-4 text-gray-900">Projet innovant E-commerce : Lingeer Linthear</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Mis en place de la statégie commerciale, étude de marché, création et gestion des réseaux sociaux.<br>Création complète de la plateforme de vente en ligne.</p>
+                        <a href="votre-fichier-projet-1.pdf" target="_blank" class="inline-flex items-center font-semibold text-purple-600 hover:text-blue-600 transition hover-target group/link">
+                            Voir l'étude de cas 
+                            <span class="w-8 h-8 ml-3 rounded-full bg-purple-100 flex items-center justify-center group-hover/link:bg-blue-100 group-hover/link:translate-x-1 transition-all"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Projet 2 (Inversé) -->
+                <div class="group grid grid-cols-1 lg:grid-cols-12 gap-10 items-center reveal glass-card p-6 md:p-8 rounded-[2.5rem] hover-card">
+                    <div class="lg:col-span-7 lg:order-2 aspect-[8/4] bg-white rounded-[1.5rem] overflow-hidden hover-target relative border border-gray-100 shadow-inner">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-pink-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-gray-400 bg-gray-50 m-2 rounded-[1.2rem]">
+                            <img src="interface exotik beach.png" alt=""><i class="fa-regular fa-image text-4xl mb-3 text-purple-300"></i>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 lg:order-1 lg:pr-4">
+                        <div class="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-600 text-xs font-bold mb-4">Développement Web</div>
+                        <h3 class="text-3xl font-poppins font-bold mb-4 text-gray-900">Création de site web pour le restaurant Exotik Beach</h3>
+                        <p class="text-gray-600 mb-8 leading-relaxed">Création de site optimiser avec l'intelligence artificielle pour trier et répondre automatiquement à certaines requêtes clients, <br> réduisant le temps de traitement de 40%.</p>
+                        <a href="votre-fichier-projet-2.pdf" target="_blank" class="inline-flex items-center font-semibold text-blue-600 hover:text-purple-600 transition hover-target group/link">
+                            Voir l'étude de cas 
+                            <span class="w-8 h-8 ml-3 rounded-full bg-blue-100 flex items-center justify-center group-hover/link:bg-purple-100 group-hover/link:translate-x-1 transition-all"><i class="fa-solid fa-arrow-right text-sm"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="py-24 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto reveal glass-card rounded-[3rem] p-10 md:p-16 shadow-xl border border-white/80 relative overflow-hidden">
+            <!-- Décoration fond formulaire -->
+            <div class="absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-3xl opacity-20 -z-10"></div>
+            
+            <div class="text-center mb-12">
+                <span class="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 font-semibold text-xs tracking-widest uppercase mb-4 shadow-sm border border-blue-100">Contact</span>
+                <h2 class="text-4xl md:text-6xl font-poppins font-bold mb-6 hover-target text-gray-900">Prêt à <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">innover ?</span></h2>
+                <p class="text-gray-600 max-w-xl mx-auto text-lg">Vous avez un projet de transformation digitale ou besoin d'une expertise web ? Discutons de vos ambitions.</p>
+            </div>
+
+            <form class="space-y-6" action="mailto:votre.email@exemple.com" method="post" enctype="text/plain">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Nom & Prénom <span class="text-purple-500">*</span></label>
+                        <input type="text" name="Nom" required class="input-line hover-target" placeholder="Jane Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Email pro <span class="text-purple-500">*</span></label>
+                        <input type="email" name="Email" required class="input-line hover-target" placeholder="jane@entreprise.com">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Sujet de votre projet</label>
+                    <input type="text" name="Projet" class="input-line hover-target" placeholder="Ex: Création de site web, Intégration IA...">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Votre message</label>
+                    <textarea rows="5" name="Message" class="input-line hover-target resize-none" placeholder="Décrivez brièvement vos besoins et objectifs..."></textarea>
+                </div>
+
+                <div class="text-center pt-6">
+                    <button type="submit" class="btn-gradient w-full md:w-auto text-lg hover-target">Envoyer ma demande <i class="fa-solid fa-paper-plane ml-2 text-sm"></i></button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-6 mt-12 bg-white/40 backdrop-blur-md border-t border-white/60 text-center relative z-10">
+        <div class="flex justify-center gap-6 mb-6">
+            <a href="https://www.linkedin.com/feed/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm text-gray-600 hover:text-blue-600 hover:shadow-md transition-all hover-target"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/dija_diop_dembaba/" target="_blank" class="w-10 h-10 flex items-center justify-center rounded-full bg-white shadow-sm text-gray-600 hover:text-purple-600 hover:shadow-md transition-all hover-target"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <p class="text-sm text-gray-500 font-medium hover-target">© 2026 Khoury DIOP. Tout droits réservés.</p>
+    </footer>
+
+    <!-- WIDGET ASSISTANT IA (GEMINI) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Bouton pour ouvrir le chat (Ajout de l'effet pulse) -->
+        <button id="ai-toggle-btn" class="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl hover:scale-110 transition-transform hover-target ai-pulse border-2 border-white">
+            <i class="fa-solid fa-sparkles"></i>
+        </button>
+
+        <!-- Fenêtre du Chatbot (Glassmorphism) -->
+        <div id="ai-chatbot-window" class="absolute bottom-20 right-0 w-80 sm:w-96 rounded-3xl overflow-hidden flex flex-col h-[480px]">
+            <!-- Header du Chat -->
+            <div class="bg-white/60 backdrop-blur-md border-b border-white/50 p-4 flex justify-between items-center shadow-sm">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center text-white text-sm shadow-inner relative">
+                        <i class="fa-solid fa-robot"></i>
+                        <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-white rounded-full"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-poppins font-bold text-sm text-gray-900 hover-target">Assistant IA</h4>
+                        <p class="text-[10px] text-purple-600 font-semibold uppercase tracking-wider">Khoury's Bot</p>
+                    </div>
+                </div>
+                <button id="ai-close-btn" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-black transition-colors hover-target"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <!-- Zone des messages -->
+            <div id="ai-messages" class="flex-1 overflow-y-auto p-5 space-y-4 text-sm font-medium">
+                <div class="message-bot p-4 rounded-2xl rounded-tl-none self-start max-w-[85%] hover-target shadow-sm">
+                    Bonjour ! 👋 Je suis l'assistant virtuel de Khoury.<br><br>Comment puis-je vous aider aujourd'hui ? (Dev Web, IA, Stratégie...)
+                </div>
+            </div>
+
+            <!-- Zone de saisie -->
+            <div class="p-4 bg-white/80 border-t border-white/50 flex items-center gap-2">
+                <input type="text" id="ai-input" placeholder="Posez votre question..." class="flex-1 bg-white border border-gray-200 shadow-inner rounded-full px-4 py-3 text-sm focus:outline-none focus:border-purple-400 focus:ring-2 focus:ring-purple-100 transition-all hover-target">
+                <button id="ai-send-btn" class="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 text-white rounded-full flex items-center justify-center hover-target shadow-md hover:shadow-lg transition-all transform hover:-translate-y-1">
+                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

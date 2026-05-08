@@ -1,0 +1,219 @@
+/* Couleurs et variables */
+        :root {
+            --bg-color: #FFFFFF; /* Blanc pur */
+            --text-dark: #1E1E2F;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* ----- Arrière-plan animé (Orbes floutées) ----- */
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: -1;
+            animation: pulse-orb 8s infinite alternate ease-in-out;
+        }
+        .orb-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: rgba(139, 92, 246, 0.3); }
+        .orb-2 { bottom: 10%; right: -5%; width: 600px; height: 600px; background: rgba(59, 130, 246, 0.2); animation-delay: -4s; }
+        .orb-3 { top: 40%; left: 20%; width: 400px; height: 400px; background: rgba(236, 72, 153, 0.15); animation-duration: 12s; }
+
+        @keyframes pulse-orb {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.1) translate(20px, -20px); }
+        }
+
+        /* ----- Menu Déroulant ----- */
+        .group:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .dropdown-menu {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-15px);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .dropdown-item {
+            transition: all 0.3s ease;
+        }
+        .dropdown-item:hover {
+            padding-left: 20px;
+            background: linear-gradient(90deg, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
+            color: var(--accent-purple);
+        }
+
+        /* ----- Curseur Personnalisé ----- */
+        @media (pointer: fine) {
+            body { cursor: none; }
+            .custom-cursor {
+                width: 22px; /* Légèrement plus grand pour bien le voir */
+                height: 22px;
+                background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+                border-radius: 50%;
+                position: fixed;
+                top: 0; left: 0;
+                pointer-events: none;
+                z-index: 999999;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, border 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Ajout d'une ombre pour le détacher du fond */
+            }
+            .custom-cursor.hovered {
+                width: 60px;
+                height: 60px;
+                background: rgba(139, 92, 246, 0.15);
+                border: 2px solid var(--accent-purple);
+                backdrop-filter: blur(2px);
+                box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+            }
+        }
+        /* Assure l'affichage sur tous les écrans si la souris est utilisée */
+        @media (pointer: coarse) {
+            .custom-cursor { display: none !important; }
+        }
+
+        /* ----- Animations au défilement ----- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px) scale(0.98);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* ----- Cartes et Effets de Relief ----- */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px -15px rgba(139, 92, 246, 0.25);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: rgba(139, 92, 246, 0.2);
+        }
+
+        /* ----- Formulaire minimaliste & stylé ----- */
+        .input-line {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            border-radius: 12px;
+            padding: 14px 20px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        .input-line:focus {
+            outline: none;
+            background: #FFF;
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+        }
+
+        /* ----- Boutons Dynamiques ----- */
+        .btn-gradient {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 14px 36px;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 20px -5px rgba(139, 92, 246, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(135deg, var(--accent-purple), var(--accent-blue));
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.4s ease;
+        }
+        .btn-gradient:hover::before {
+            opacity: 1;
+        }
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -5px rgba(139, 92, 246, 0.6);
+        }
+
+        /* ----- Animation de flottaison (Hero) ----- */
+        .float-anim {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ----- Effet de texte brillant ----- */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+        }
+
+        /* ----- Assistant IA (Chatbot) ----- */
+        .ai-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(139, 92, 246, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(139, 92, 246, 0); }
+        }
+        #ai-chatbot-window {
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+        }
+        #ai-chatbot-window.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .message-bot { background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(139, 92, 246, 0.2); border-bottom-left-radius: 4px; }
+        .message-user { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; border-bottom-right-radius: 4px; box-shadow: 0 4px 10px rgba(139, 92, 246, 0.3); }
+        
+        .typing-indicator span {
+            animation: blink 1.4s infinite both;
+            height: 6px; width: 6px; background: var(--accent-purple); border-radius: 50%; display: inline-block; margin: 0 1px;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes blink { 0% { opacity: 0.2; transform: scale(0.8); } 20% { opacity: 1; transform: scale(1.2); } 100% { opacity: 0.2; transform: scale(0.8); } }
+    
