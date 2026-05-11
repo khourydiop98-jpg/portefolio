@@ -330,31 +330,32 @@
                 <p class="text-gray-600 max-w-xl mx-auto text-lg">Vous avez un projet de transformation digitale ou besoin d'une expertise web ? Discutons de vos ambitions.</p>
             </div>
 
-            <form class="space-y-6" action="mailto:votre.email@exemple.com" method="post" enctype="text/plain">
+            <form id="contact-form">
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Nom & Prénom <span class="text-purple-500">*</span></label>
-                        <input type="text" name="Nom" required class="input-line hover-target" placeholder="Jane Doe">
+                        <input type="text" id="nom"  required class="input-line hover-target" placeholder="Jane Doe">
                     </div>
                     <div>
                         <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Email pro <span class="text-purple-500">*</span></label>
-                        <input type="email" name="Email" required class="input-line hover-target" placeholder="jane@entreprise.com">
+                        <input type="email" id="email"  required class="input-line hover-target" placeholder="jane@entreprise.com">
                     </div>
                 </div>
                 
-                <div>
-                    <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Sujet de votre projet</label>
-                    <input type="text" name="Projet" class="input-line hover-target" placeholder="Ex: Création de site web, Intégration IA...">
-                </div>
+               
 
                 <div>
                     <label class="block text-sm font-semibold mb-2 text-gray-700 pl-2">Votre message</label>
-                    <textarea rows="5" name="Message" class="input-line hover-target resize-none" placeholder="Décrivez brièvement vos besoins et objectifs..."></textarea>
+                    <textarea id="message" rows="5" class="input-line hover-target resize-none" placeholder="Décrivez brièvement vos besoins et objectifs..."></textarea>
+                   
                 </div>
 
                 <div class="text-center pt-6">
                     <button type="submit" class="btn-gradient w-full md:w-auto text-lg hover-target">Envoyer ma demande <i class="fa-solid fa-paper-plane ml-2 text-sm"></i></button>
+                    
+                   
                 </div>
+                 <p id="form-status">Message envoyé !</p>
             </form>
         </div>
     </section>
@@ -410,6 +411,8 @@
     </div>
 
     <script src="script.js"></script>
-
+    <script type="module" src="formulaire-contact.js">
+  
+</script>
 </body>
 </html>
